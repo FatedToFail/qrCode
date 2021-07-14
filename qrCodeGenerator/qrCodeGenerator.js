@@ -33,17 +33,12 @@ const getQrGeneratorByVersion = (version) => {
     generator.push('cheqNum');
   }
   generator.push('footerNum');
-  generator.push('footer1');
-  generator.push('footer2');
-  generator.push('footer3');
-  generator.push('footer4');
   generator.push('mobil');
   generator.push('email');
   generator.push('id');
   generator.push('saleItemNum');
   generator.push(itemGenerator);
   generator.push('paymentType');
-  generator.push('paymentAmount');
 
   return generator;
 }
@@ -67,18 +62,13 @@ const getDataObjByData = (config, sale, items, prices, discounts) => {
     command: 'SLD',
     cashierNum: undefined,
     cheqNum: undefined,
-    footerNum: 4,
-    footer1: config.cashRegisterConfig.footer1,
-    footer2: config.cashRegisterConfig.footer2,
-    footer3: config.cashRegisterConfig.footer3,
-    footer4: config.cashRegisterConfig.footer4,
+    footerNum: undefined,
     mobil: undefined,
     email: undefined,
     id: undefined,
     saleItemNum: sale.itemList.length,
     items: itemData,
     paymentType: getPaymentType(sale.paymentType),
-    paymentAmount: getTotalAmount(itemData),
   };
 };
 
@@ -116,9 +106,5 @@ const getPaymentType = (type) => {
   };
   return paymentTypes[type];
 };
-
-const getTotalAmount = (items) => {
-  return items.reduce((prev, next) => prev + next.price * next.quantity, 0);
-}
 
 module.exports = qrCodeGenerator;
