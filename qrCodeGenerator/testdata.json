@@ -177,11 +177,6 @@
     "salePoint": "60d4f141f032752bcc681ef8",
     "itemList": [
       {
-        "posProduct": "60ec55bc8eda0a0008f5ab7a",
-        "quantity": 1,
-        "discount": null
-      },
-      {
         "posProduct": "60a3e65ec139850008149ded",
         "quantity": 2,
         "discount": "5f4e6fc4bc5fdab2be544514"
@@ -203,6 +198,29 @@
         "posProduct": "60a3e65ec139850008149ded",
         "quantity": 2,
         "discount": null
+      }
+    ],
+    "currency": "HUF",
+    "paymentType": "CARD",
+    "placeType": "IN-PLACE"
+  },
+  "sale3": {
+    "salePoint": "60d4f141f032752bcc681ef8",
+    "itemList": [
+      {
+        "posProduct": "60ec55bc8eda0a0008f5ab7a",
+        "quantity": 1,
+        "discount": null
+      },
+      {
+        "posProduct": "60a3e65ec139850008149ded",
+        "quantity": 2,
+        "discount": null
+      },
+      {
+        "posProduct": "60ec55bc8eda0a0008f5ab7a",
+        "quantity": 3,
+        "discount": "5f4e6fc4bc5fdab2be544514"
       }
     ],
     "currency": "HUF",
