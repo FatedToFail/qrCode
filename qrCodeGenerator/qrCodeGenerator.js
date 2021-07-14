@@ -50,7 +50,7 @@ const getQrGeneratorByVersion = (version) => {
   generator.push('paymentType');
 
   return generator;
-}
+};
 
 const getDataObjByData = (config, sale, items, prices, discounts) => {
   const itemData = getItemData(config, sale, items, prices, discounts);
@@ -99,7 +99,7 @@ const getDiscount = (discounts, discount) => {
     return `M${discountData.value}`;
   }
   return undefined;
-}
+};
 
 const getPlaceType = (type) => {
   const placeTypes = {
@@ -107,7 +107,7 @@ const getPlaceType = (type) => {
     'TO-GO': 'takeaway',
   };
   return placeTypes[type];
-}
+};
 
 const getPaymentType = (type) => {
   const paymentTypes = {
