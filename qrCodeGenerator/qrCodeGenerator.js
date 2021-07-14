@@ -1,21 +1,26 @@
 const qrCodeGenerator = (config, sale, items, prices, discounts, version) => {
-  const generator = getQrGeneratorByVersion(version);
-  const dataObj = getDataObjByData(config, sale, items, prices, discounts);
-  return generator.map((objKey) => {
-    if (typeof objKey === 'string') {
-      return dataObj[objKey] || '';
-    }
-    const itemRes = [];
-    for (let i = 0; i < dataObj.saleItemNum; i++) {
-      itemRes.push(objKey.map((itemKey) => dataObj.items[i][itemKey] || ''));
-    }
-    return itemRes;
-  }).flat(2).join('|');
+  try {
+    const generator = getQrGeneratorByVersion(version);
+    const dataObj = getDataObjByData(config, sale, items, prices, discounts);
+    return generator.map((objKey) => {
+      if (typeof objKey === 'string') {
+        return dataObj[objKey] || '';
+      }
+      const itemRes = [];
+      for (let i = 0; i < dataObj.saleItemNum; i++) {
+        itemRes.push(objKey.map((itemKey) => dataObj.items[i][itemKey] || ''));
+      }
+      return itemRes;
+    }).flat(2).join('|');
+  }
+  catch {
+    return null;
+  }
 };
 
-const getQrGeneratorByVersion = (version) => {  
+const getQrGeneratorByVersion = (version) => {
   let itemGenerator = [];
-  
+
   itemGenerator.push('name');
   itemGenerator.push('index');
   itemGenerator.push('price');
@@ -23,9 +28,9 @@ const getQrGeneratorByVersion = (version) => {
   if (version >= 5) {
     itemGenerator.push('discount');
   }
-  
+
   let generator = [];
-  
+
   generator.push('nameSpace');
   generator.push('command');
   generator.push('cashierNum');
@@ -33,6 +38,10 @@ const getQrGeneratorByVersion = (version) => {
     generator.push('cheqNum');
   }
   generator.push('footerNum');
+  generator.push('footer1');
+  generator.push('footer2');
+  generator.push('footer3');
+  generator.push('footer4');
   generator.push('mobil');
   generator.push('email');
   generator.push('id');
@@ -44,25 +53,18 @@ const getQrGeneratorByVersion = (version) => {
 }
 
 const getDataObjByData = (config, sale, items, prices, discounts) => {
-  const itemData = sale.itemList.map(({ posProduct, quantity, discount }) => {
-    const item = getItemByPosProduct(items, posProduct);
-    return {
-      name: item.printTitles.hu,
-      index: getIndexByConfigSaleAndItem(config, sale, item),
-      price: getPriceByPosProductAndSale(prices, posProduct, sale),
-      quantity: quantity,
-      discount: getDiscount(discounts, discount),
-    }
-  });
-
-  
+  const itemData = getItemData(config, sale, items, prices, discounts);
 
   return {
     nameSpace: 'http://www.fiscat.com/AEE',
     command: 'SLD',
     cashierNum: undefined,
     cheqNum: undefined,
-    footerNum: undefined,
+    footerNum: 4,
+    footer1: config.cashRegisterConfig.footer1,
+    footer2: config.cashRegisterConfig.footer2,
+    footer3: config.cashRegisterConfig.footer3,
+    footer4: config.cashRegisterConfig.footer4,
     mobil: undefined,
     email: undefined,
     id: undefined,
@@ -71,6 +73,17 @@ const getDataObjByData = (config, sale, items, prices, discounts) => {
     paymentType: getPaymentType(sale.paymentType),
   };
 };
+
+const getItemData = (config, sale, items, prices, discounts) => sale.itemList.map(({ posProduct, quantity, discount }) => {
+  const item = getItemByPosProduct(items, posProduct);
+  return {
+    name: item.printTitles.hu,
+    index: getIndexByConfigSaleAndItem(config, sale, item),
+    price: getPriceByPosProductAndSale(prices, posProduct, sale),
+    quantity: quantity,
+    discount: getDiscount(discounts, discount),
+  }
+});
 
 const getIndexByConfigSaleAndItem = (config, sale, item) => config.cashRegisterConfig.taxRateButtons.find(({ taxRate }) => getTaxRateByItemAndSale(item, sale) === taxRate).buttonIndex;
 const getTaxRateByItemAndSale = (item, sale) => {
