@@ -1,0 +1,262 @@
+{
+  "item1": {
+    "_id": "60ec55bc8eda0a0008f5ab7a",
+    "titles": {
+      "hu": "Egyedi torta",
+      "en": ""
+    },
+    "subtitles": {
+      "hu": null,
+      "en": null
+    },
+    "printTitles": {
+      "hu": "Egyedi torta",
+      "en": ""
+    },
+    "categories": [
+      "60ec557582dec40008a3958c"
+    ],
+    "profileImage": null,
+    "priority": false,
+    "parent": null,
+    "root": null,
+    "deprecated": false,
+    "userId": "eu-west-1:ab9883b7-0bdd-4a2e-be97-14abf47c3205",
+    "defaultTaxValue": {
+      "takeaway": "5f3acadb3e37c30801a5e60c",
+      "dinein": "5f3acadb3e37c30801a5e60c"
+    },
+    "taxValueExceptions": [],
+    "productIngredients": [],
+    "__v": 0,
+    "createdAt": {
+      "$date": "2021-07-12T14:46:20.167Z"
+    },
+    "updatedAt": {
+      "$date": "2021-07-12T14:46:20.167Z"
+    }
+  },
+  "item2": {
+    "_id": "60a3e65ec139850008149ded",
+    "titles": {
+      "hu": "Tejföl",
+      "en": ""
+    },
+    "subtitles": {
+      "hu": null,
+      "en": null
+    },
+    "printTitles": {
+      "hu": "Tejföl",
+      "en": ""
+    },
+    "categories": [
+      "6077133231252b000801c0cf"
+    ],
+    "profileImage": null,
+    "priority": false,
+    "parent": "60a3e645406aa6000964121c",
+    "root": "60a3e645406aa6000964121c",
+    "deprecated": true,
+    "userId": "eu-west-1:17ac3c98-3a93-438a-9c2b-078c7d5f1fe2",
+    "defaultTaxValue": {
+      "takeaway": "5f3acadb3e37c30801a5e60c",
+      "dinein": "5f3acadb3e37c30801a5e60c"
+    },
+    "taxValueExceptions": [
+      {
+        "salePoint": "6096946fa0fee3340c425ec2",
+        "values": {
+          "takeaway": "5f3acac345d71707f9cc9d78",
+          "dinein": "5f3acab67573c507f13a757b"
+        }
+      }
+    ],
+    "productIngredients": [
+      {
+        "product": "6097ab99c22de60008824e29",
+        "unfolded": false,
+        "amount": 2
+      },
+      {
+        "product": "60787ae61909b0000805bebb",
+        "unfolded": true,
+        "amount": 5
+      }
+    ],
+    "__v": 0,
+    "createdAt": {
+      "$date": "2021-05-18T16:07:58.989Z"
+    },
+    "updatedAt": {
+      "$date": "2021-05-18T16:08:42.608Z"
+    }
+  },
+  "itemPrices": [
+    {
+      "_id": "60ec56518eda0a0008f5ab7d",
+      "deprecated": false,
+      "userId": "eu-west-1:ab9883b7-0bdd-4a2e-be97-14abf47c3205",
+      "currencies": [
+        {
+          "value": 500,
+          "name": "HUF"
+        }
+      ],
+      "posProduct": "60ec55bc8eda0a0008f5ab7a",
+      "posProductRoot": "60ec56518eda0a0008f5ab7c",
+      "__v": 0,
+      "createdAt": {
+        "$date": "2021-07-12T14:48:49.294Z"
+      },
+      "updatedAt": {
+        "$date": "2021-07-12T14:48:49.294Z"
+      }
+    },
+    {
+      "_id": "60a3e65fc139850008149dee",
+      "deprecated": true,
+      "userId": "eu-west-1:17ac3c98-3a93-438a-9c2b-078c7d5f1fe2",
+      "currencies": [
+        {
+          "value": 1000,
+          "name": "HUF"
+        }
+      ],
+      "posProduct": "60a3e65ec139850008149ded",
+      "posProductRoot": "60a3e645406aa6000964121c",
+      "__v": 0,
+      "createdAt": {
+        "$date": "2021-05-18T16:07:59.025Z"
+      },
+      "updatedAt": {
+        "$date": "2021-05-18T16:08:42.676Z"
+      }
+    }
+  ],
+  "config": {
+    "_id": "60d4f141f032752bcc681ef8",
+    "cashRegisterConfig": {
+      "footer1": "",
+      "footer2": "",
+      "footer3": "",
+      "footer4": "",
+      "taxRateButtons": [
+        {
+          "taxRate": "5f3acab67573c507f13a757b",
+          "buttonIndex": "1"
+        },
+        {
+          "taxRate": "5f3acac345d71707f9cc9d78",
+          "buttonIndex": "2"
+        },
+        {
+          "taxRate": "5f3acadb3e37c30801a5e60c",
+          "buttonIndex": "3"
+        }
+      ],
+      "versionNumber": 5
+    },
+    "parent": null,
+    "root": null,
+    "deprecated": false,
+    "userId": "eu-west-1:b1245f44-4c70-4835-a3bf-788734f8747a",
+    "title": "Szemere",
+    "location": "60d4ee8ef032752bcc681ef6",
+    "warehouse": "60d4eed4f032752bcc681ef7",
+    "apNumber": "245",
+    "createdAt": {
+      "$date": "2021-06-24T21:43:32.862Z"
+    },
+    "updatedAt": {
+      "$date": "2021-06-24T21:43:32.862Z"
+    },
+    "__v": 0
+  },
+  "sale1": {
+    "salePoint": "60d4f141f032752bcc681ef8",
+    "itemList": [
+      {
+        "posProduct": "60ec55bc8eda0a0008f5ab7a",
+        "quantity": 1,
+        "discount": null
+      },
+      {
+        "posProduct": "60a3e65ec139850008149ded",
+        "quantity": 2,
+        "discount": "5f4e6fc4bc5fdab2be544514"
+      }
+    ],
+    "currency": "HUF",
+    "paymentType": "CASH",
+    "placeType": "TO-GO"
+  },
+  "sale2": {
+    "salePoint": "60d4f141f032752bcc681ef8",
+    "itemList": [
+      {
+        "posProduct": "60ec55bc8eda0a0008f5ab7a",
+        "quantity": 1,
+        "discount": null
+      },
+      {
+        "posProduct": "60a3e65ec139850008149ded",
+        "quantity": 2,
+        "discount": null
+      }
+    ],
+    "currency": "HUF",
+    "paymentType": "CASH",
+    "placeType": "IN-PLACE"
+  },
+  "discounts": [
+    {
+      "_id": "5f3ed8f39a1c4c6eb7ade8f6",
+      "parent": null,
+      "root": null,
+      "deprecated": false,
+      "userId": "eu-west-1:ab9883b7-0bdd-4a2e-be97-14abf47c3205",
+      "title": "ott lakók kedvezménye",
+      "value": 10,
+      "createdAt": {
+        "$date": "2020-07-24T21:28:25.477Z"
+      },
+      "updatedAt": {
+        "$date": "2020-07-24T21:28:25.477Z"
+      },
+      "__v": 0
+    },
+    {
+      "_id": "5f4e6fc4bc5fdab2be544514",
+      "parent": null,
+      "root": null,
+      "deprecated": false,
+      "userId": "eu-west-1:ab9883b7-0bdd-4a2e-be97-14abf47c3205",
+      "title": "családtagoknak szóló kedvezmény",
+      "value": 20,
+      "createdAt": {
+        "$date": "2020-07-24T21:28:25.477Z"
+      },
+      "updatedAt": {
+        "$date": "2020-07-24T21:28:25.477Z"
+      },
+      "__v": 0
+    },
+    {
+      "_id": "5f96c49ca9082a295d5b0bfb",
+      "parent": null,
+      "root": null,
+      "deprecated": false,
+      "userId": "eu-west-1:ab9883b7-0bdd-4a2e-be97-14abf47c3205",
+      "title": "készletkisöprés",
+      "value": 15,
+      "createdAt": {
+        "$date": "2020-10-26T12:42:25.477Z"
+      },
+      "updatedAt": {
+        "$date": "2020-10-26T12:42:25.477Z"
+      },
+      "__v": 0
+    }
+  ]
+}
