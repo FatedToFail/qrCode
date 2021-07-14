@@ -74,16 +74,13 @@ const getDataObjByData = (config, sale, items, prices, discounts) => {
   };
 };
 
-const getItemData = (config, sale, items, prices, discounts) => sale.itemList.map(({ posProduct, quantity, discount }) => {
-  const item = getItemByPosProduct(items, posProduct);
-  return {
-    name: item.printTitles.hu,
-    index: getIndexByConfigSaleAndItem(config, sale, item),
-    price: getPriceByPosProductAndSale(prices, posProduct, sale),
-    quantity: quantity,
-    discount: getDiscount(discounts, discount),
-  }
-});
+const getItemData = (config, sale, items, prices, discounts) => sale.itemList.map(({ posProduct, quantity, discount }) => ({
+  name: undefined,
+  index: getIndexByConfigSaleAndItem(config, sale, getItemByPosProduct(items, posProduct)),
+  price: getPriceByPosProductAndSale(prices, posProduct, sale),
+  quantity: quantity,
+  discount: getDiscount(discounts, discount),
+}));
 
 const getIndexByConfigSaleAndItem = (config, sale, item) => config.cashRegisterConfig.taxRateButtons.find(({ taxRate }) => getTaxRateByItemAndSale(item, sale) === taxRate).buttonIndex;
 const getTaxRateByItemAndSale = (item, sale) => {

@@ -206,7 +206,7 @@
       }
     ],
     "currency": "HUF",
-    "paymentType": "CASH",
+    "paymentType": "CARD",
     "placeType": "IN-PLACE"
   },
   "discounts": [
